@@ -1,0 +1,16 @@
+// 模板文本
+<script id="tpl" type="text/x-template">
+<img src="dummy.png" title="{{title}}"/>
+</script>
+
+// 获取模板
+<script type="text/javascript">
+// 不能通过innerText获取，因为innerText无法获取<img/>等标签字符
+var tpl = document.getElementById('tpl').innerHTML
+tpl = tpl.replace(/^[\s\u3000]*|[\s\u3000]*$/, '')
+Handlebars.compile(tpl)({title: 'test'})
+</script>
+-----------------------------------
+©著作权归作者所有：来自51CTO博客作者肥仔John的原创作品，请联系作者获取转载授权，否则将追究法律责任
+HTML语义化：HTML5新标签——template
+https://blog.51cto.com/u_4292381/5157759
